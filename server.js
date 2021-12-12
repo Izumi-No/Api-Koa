@@ -6,7 +6,6 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const io = require('./src/config/websocket.js')(server);
 const eventApply = require('./src/websockets/index');
-
 eventApply(io)
 
 if (cluster.isMaster) {
@@ -27,6 +26,6 @@ if (cluster.isMaster) {
 } else {
   server.listen(PORT);
 
-  console.log('Listening on port 8000');
+  console.log(`listening on ${PORT}`);
 }
 
