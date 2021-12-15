@@ -8,7 +8,7 @@ function UserController() {
 			const hashedPassword = bcrypt.hashSync(password, saltRounds);
 
 			return hashedPassword;
-		},
+		}, 
 
 		getAllUsers: async ({response}) => {
 			try {
